@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package FBSTestTask;
+
+service Fibonacci {
+  rpc GetFibSlice (FibonacciRequest) returns (FibonacciResponse) {}
+}
+
+message FibonacciRequest {
+  int64 start = 1;
+  int64 end = 2;
+}
+
+message FibonacciResponse {
+  string message = 1;
+}
