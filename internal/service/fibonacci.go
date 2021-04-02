@@ -17,8 +17,8 @@ func NewFibonacciService(repo r.FibonacciRepository) *FibonacciService {
 	return &FibonacciService{repo: repo}
 }
 
-func (f *FibonacciService) getFibSequence(n int) []int {
-	fibSequence := make([]int, n+1, n+2)
+func (f *FibonacciService) getFibSequence(n int) []int64 {
+	fibSequence := make([]int64, n+1, n+2)
 	if n < 2 {
 		fibSequence = fibSequence[0:2]
 	}
@@ -57,7 +57,7 @@ func (f *FibonacciService) GetFibSlice(ctx context.Context, start, end int) (str
 	return f.filterFibSequence(sequence, start, end), nil
 }
 
-func (f *FibonacciService) filterFibSequence(fibSequence []int, start int, end int) string {
+func (f *FibonacciService) filterFibSequence(fibSequence []int64, start int, end int) string {
 	var b strings.Builder
 
 	for i := start; i <= end; i++ {

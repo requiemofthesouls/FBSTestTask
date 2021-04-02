@@ -12,7 +12,7 @@ import (
 func TestFibonacciService_GetFibSlice_ExpectError(t *testing.T) {
 	ring := redis.NewRing(&redis.RingOptions{
 		Addrs: map[string]string{
-			"redis": ":6379",
+			"redis": "redis:6379",
 		},
 	})
 
