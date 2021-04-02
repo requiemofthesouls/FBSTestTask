@@ -17,7 +17,8 @@
 
 ---
 
-# Развертывание
+# Развертывание и тестирование
 
 1. `docker-compose up -d` 
-2. 
+2. `curl -X POST 127.0.0.1:8080/api/v1/getFibSlice -d '{"start": 1992, "end": 2000}' | jq`
+3. GRPC клиент находится в файле ./internal/transport/grpc/grpc_test.go

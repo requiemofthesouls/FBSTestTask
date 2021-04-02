@@ -17,7 +17,7 @@ import (
 func Run() {
 	ring := redis.NewRing(&redis.RingOptions{
 		Addrs: map[string]string{
-			"redis": ":6379",
+			"main": "redis:6379",
 		},
 	})
 

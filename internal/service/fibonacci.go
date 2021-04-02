@@ -17,13 +17,6 @@ func NewFibonacciService(repo r.FibonacciRepository) *FibonacciService {
 	return &FibonacciService{repo: repo}
 }
 
-func (f *FibonacciService) computeFib(n int) int {
-	if n <= 1 {
-		return n
-	}
-	return f.computeFib(n-1) + f.computeFib(n-2)
-}
-
 func (f *FibonacciService) getFibSequence(n int) []int {
 	fibSequence := make([]int, n+1, n+2)
 	if n < 2 {
